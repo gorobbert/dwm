@@ -111,8 +111,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Up,     spawn,          {.v = volup } },
 	{ MODKEY,                       XK_Down,   spawn,          {.v = voldown } },
 	/* CUSTOM: Control Music */
-	{ MODKEY,                       XK_F5,     spawn,          {.v = brup } },
-	{ MODKEY,                       XK_F6,     spawn,          {.v = brdown } },
+	{ MODKEY,                       XK_F5,     spawn,          {.v = brdown } },
+	{ MODKEY,                       XK_F6,     spawn,          {.v = brup } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
