@@ -66,8 +66,8 @@ static const char *next[]  = { "cmus-remote", "-n", NULL };
 static const char *prev[]  = { "cmus-remote", "-r", NULL };
 
 /* Volume Control */
-static const char *volup[]  = { "amixer", "sset", "Master", "1+", NULL };
-static const char *voldown[]  = { "amixer", "sset", "Master", "--", "1-", NULL };
+static const char *volup[]  = { "amixer", "sset", "Master", "1%+", NULL };
+static const char *voldown[]  = { "amixer", "sset", "Master", "--", "1%-", NULL };
 
 /* Brightness Control */
 static const char *brup[]  = { "xbc.sh", "up", NULL };
