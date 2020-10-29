@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "monospace:size=12" };
+static const char dmenufont[]       = "monospace:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -27,8 +27,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       0,       0,           -1 },
 };
 
 /* layout(s) */
@@ -57,13 +56,30 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "mate-terminal", NULL };
+static const char *termcmd[]  = { "st", NULL };
+static const char *termcmdf[]  = { "st", "-f", "Fira Mono-16", NULL };
+static const char *termcmdl[]  = { "st", "-f", "Liberation Mono-14", NULL };
+
+/* Music Control */
+static const char *toggle[]  = { "cmus-remote", "-u", NULL };
+static const char *next[]  = { "cmus-remote", "-n", NULL };
+static const char *prev[]  = { "cmus-remote", "-r", NULL };
+
+/* Volume Control */
+static const char *volup[]  = { "amixer", "sset", "Master", "1+", NULL };
+static const char *voldown[]  = { "amixer", "sset", "Master", "--", "1-", NULL };
+
+/* Brightness Control */
+static const char *brup[]  = { "xbc.sh", "up", NULL };
+static const char *brdown[]  = { "xbc.sh", "down", NULL };
+
 
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask|ControlMask, XK_Return, spawn,          {.v = termcmdf } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -73,6 +89,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = termcmdl} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
@@ -87,6 +104,15 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	/* CUSTOM: Control Music / Volume */
+	{ MODKEY,                       XK_c,      spawn,          {.v = toggle } },
+	{ MODKEY,                       XK_Right,  spawn,          {.v = next } },
+	{ MODKEY,                       XK_Left,   spawn,          {.v = prev } },
+	{ MODKEY,                       XK_Up,     spawn,          {.v = volup } },
+	{ MODKEY,                       XK_Down,   spawn,          {.v = voldown } },
+	/* CUSTOM: Control Music */
+	{ MODKEY,                       XK_F5,     spawn,          {.v = brup } },
+	{ MODKEY,                       XK_F6,     spawn,          {.v = brdown } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
