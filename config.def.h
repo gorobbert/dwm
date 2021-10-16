@@ -73,6 +73,8 @@ static const char *voldown[]  = { "amixer", "sset", "Master", "--", "1%-", NULL 
 static const char *brup[]  = { "xbc.sh", "up", NULL };
 static const char *brdown[]  = { "xbc.sh", "down", NULL };
 
+/* screengrab */
+static const char *screengrab[]  = { "/home/robbert/bin/screengrab.sh", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -110,9 +112,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Left,   spawn,          {.v = prev } },
 	{ MODKEY,                       XK_Up,     spawn,          {.v = volup } },
 	{ MODKEY,                       XK_Down,   spawn,          {.v = voldown } },
-	/* CUSTOM: Control Music */
+	/* CUSTOM: Control Brightness */
 	{ MODKEY,                       XK_F5,     spawn,          {.v = brdown } },
 	{ MODKEY,                       XK_F6,     spawn,          {.v = brup } },
+	/* CUSTOM: screengrab */
+	{ MODKEY,                       XK_s,     spawn,          {.v = screengrab } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
