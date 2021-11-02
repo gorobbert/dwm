@@ -5,11 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Mona Medium:size=16" };
-static const char dmenufont[]       = "Fira Mona Medium:size=16";
-
-//static const char bd_norm[]       = "#928374";
-static const char bd_norm[]       = "#282828";
+static const char *fonts[] = {"Fira Mono Medium:pixelsize=18:antialias=true:autohint=true" };
+static const char dmenufont[] = {"Fira Mono Medium:pixelsize=18:antialias=true:autohint=true" };
 
 static const char fg_norm[]       = "#e2d3ba";
 static const char bg_norm[]       = "#282828";
@@ -17,10 +14,13 @@ static const char bg_norm[]       = "#282828";
 static const char fg_sel[]       = "#ebdbb2";
 static const char bg_sel[]        = "#3c3836";
 
+static const char bd_norm[]       = "#282828";
+static const char bd_sel[]       = "#928374";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { fg_norm, bg_norm, bd_norm },
-	[SchemeSel]  = { fg_sel, bg_sel,  bg_sel  },
+	[SchemeSel]  = { fg_sel, bg_sel,  bd_sel  },
 };
 
 	/*     fg         bg       
