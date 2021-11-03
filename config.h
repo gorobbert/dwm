@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[] = {"Fira Mono Medium:pixelsize=18:antialias=true:autohint=true" };
-static const char dmenufont[] = {"Fira Mono Medium:pixelsize=18:antialias=true:autohint=true" };
+static const char *fonts[] = {"Source Code Pro Medium:pixelsize=18:antialias=true:autohint=true" };
+static const char dmenufont[] = {"Source Code Pro Medium:pixelsize=18:antialias=true:autohint=true" };
 
 static const char fg_norm[]       = "#e2d3ba";
 static const char bg_norm[]       = "#282828";
@@ -68,14 +68,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg_norm, "-nf", fg_norm, "-sb", bg_sel, "-sf", fg_sel, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *termcmdf[]  = { "st", "-f", "Fira Mono-16", NULL };
-static const char *termcmdl[]  = { "st", "-f", "Liberation Mono-14", NULL };
+static const char *termcmdf[]  = { "st", "-f", "Hack:pixelsize=20", NULL };
+static const char *termcmdl[]  = { "st", "-f", "Liberation Mono:pixelsize=20", NULL };
 
 /* Music Control */
-/* until cmus is in repos again */
-static const char *toggle[]  = { "cmus-remote", "--server", "$HOME/.cmus/socket", "-u", NULL };
-static const char *next[]  = { "cmus-remote", "--server", "$HOME/.cmus/socket", "-n", NULL };
-static const char *prev[]  = { "cmus-remote", "--server", "$HOME/.cmus/socket", "-r", NULL };
+/* temp hack */
+static const char *toggle[]  = { "cmus-remote", "--server", "/home/robbert/.cmus/socket", "-u", NULL };
+static const char *next[]  = { "cmus-remote", "--server", "/home/robbert/.cmus/socket", "-n", NULL };
+static const char *prev[]  = { "cmus-remote", "--server", "/home/robbert/.cmus/socket", "-r", NULL };
 
 /* Volume Control */
 static const char *volup[]  = { "amixer", "sset", "Master", "1%+", NULL };
