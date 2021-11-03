@@ -72,9 +72,10 @@ static const char *termcmdf[]  = { "st", "-f", "Fira Mono-16", NULL };
 static const char *termcmdl[]  = { "st", "-f", "Liberation Mono-14", NULL };
 
 /* Music Control */
-static const char *toggle[]  = { "cmus-remote", "-u", NULL };
-static const char *next[]  = { "cmus-remote", "-n", NULL };
-static const char *prev[]  = { "cmus-remote", "-r", NULL };
+/* until cmus is in repos again */
+static const char *toggle[]  = { "cmus-remote", "--server", "$HOME/.cmus/socket", "-u", NULL };
+static const char *next[]  = { "cmus-remote", "--server", "$HOME/.cmus/socket", "-n", NULL };
+static const char *prev[]  = { "cmus-remote", "--server", "$HOME/.cmus/socket", "-r", NULL };
 
 /* Volume Control */
 static const char *volup[]  = { "amixer", "sset", "Master", "1%+", NULL };
