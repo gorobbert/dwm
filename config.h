@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int snap      = 8;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[] = {"Source Code Pro Medium:pixelsize=18:antialias=true:autohint=true" };
@@ -88,6 +88,9 @@ static const char *brdown[]  = { "xbc.sh", "down", NULL };
 /* screengrab */
 static const char *screengrab[]  = { "/home/robbert/bin/screengrab.sh", NULL };
 
+/* lock */
+static const char *lock[]  = { "slock", NULL };
+
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -104,6 +107,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = termcmdl} },
+	{ Mod1Mask|ControlMask,         XK_l,      spawn,          {.v = lock} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
