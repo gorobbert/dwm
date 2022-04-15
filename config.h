@@ -129,6 +129,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Left,   spawn,          {.v = prev } },
 	{ MODKEY,                       XK_Up,     spawn,          {.v = volup } },
 	{ MODKEY,                       XK_Down,   spawn,          {.v = voldown } },
+	{ MODKEY,                       XK_x,      spawn,          {.v = togglem } },
 	/* CUSTOM: Control Brightness */
 	{ MODKEY,                       XK_F5,     spawn,          {.v = brdown } },
 	{ MODKEY,                       XK_F6,     spawn,          {.v = brup } },
