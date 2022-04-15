@@ -67,9 +67,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg_norm, "-nf", fg_norm, "-sb", bg_sel, "-sf", fg_sel, NULL };
-static const char *termcmd[]  = { "st", NULL };
-static const char *termcmdf[]  = { "st", "-f", "Hack:pixelsize=20", NULL };
-static const char *termcmdl[]  = { "st", "-f", "Liberation Mono:pixelsize=20", NULL };
+static const char *termcmd[] = { "st", NULL };
+static const char *termcmdf[] = { "st", "-f", "Hack:pixelsize=20", NULL };
+static const char *termcmdl[] = { "st", "-f", "Liberation Mono:pixelsize=20", NULL };
 
 /* Music Control */
 /* temp hack */
@@ -78,12 +78,13 @@ static const char *next[]  = { "cmus-remote", "--server", "/home/robbert/.cmus/s
 static const char *prev[]  = { "cmus-remote", "--server", "/home/robbert/.cmus/socket", "-r", NULL };
 
 /* Volume Control */
-static const char *volup[]  = { "amixer", "sset", "Master", "1%+", NULL };
-static const char *voldown[]  = { "amixer", "sset", "Master", "--", "1%-", NULL };
+static const char *volup[] = { "amixer", "sset", "Master", "1%+", NULL };
+static const char *voldown[] = { "amixer", "sset", "Master", "--", "1%-", NULL };
+static const char *togglem[] = { "amixer", "sset", "Master", "toggle", NULL };
 
 /* Brightness Control */
-static const char *brup[]  = { "xbc.sh", "up", NULL };
-static const char *brdown[]  = { "xbc.sh", "down", NULL };
+static const char *brup[] = { "xbc.sh", "up", NULL };
+static const char *brdown[] = { "xbc.sh", "down", NULL };
 
 /* screengrab */
 static const char *screengrab[]  = { "/home/robbert/bin/screengrab.sh", NULL };
