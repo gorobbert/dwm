@@ -5,8 +5,10 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 8;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[] = {"Source Code Pro Medium:pixelsize=18:antialias=true:autohint=true" };
-static const char dmenufont[] = {"Source Code Pro Medium:pixelsize=18:antialias=true:autohint=true" };
+//static const char *fonts[] = {"Source Code Pro Medium:pixelsize=18:antialias=true:autohint=true" };
+//static const char dmenufont[] = {"Source Code Pro Medium:pixelsize=18:antialias=true:autohint=true" };
+static const char *fonts[] = {"Hack:pixelsize=18:antialias=true:autohint=true" };
+static const char dmenufont[] = {"Hack:pixelsize=18:antialias=true:autohint=true" };
 
 static const char fg_norm[]       = "#e2d3ba";
 static const char bg_norm[]       = "#282828";
